@@ -325,14 +325,19 @@ namespace ArkanoidGame
             continueGame.Text = "";
             msg.Text = "";
             gameLevel.Text = $"Уровень 1";
+            PositionMainObject();
 
+
+            // Запуск таймера
+            gameTimer.Start();
+        }
+
+        private void PositionMainObject()
+        {
             // Позиционирование мяча и платформы по центру игровой области
             gameBall.BallView.Left = gameArea.AreaWidth / 2;
             gameBall.BallView.Top = gameArea.AreaHeight / 2;
             gamePlatform.PlatformView.Left = gameArea.AreaWidth / 2;
-
-            // Запуск таймера
-            gameTimer.Start();
         }
 
         // Генерация блоков для первого уровня
